@@ -1,0 +1,17 @@
+.example-container {
+  position: absolute;
+  top: 85px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+mat-sidenav {
+  width: 25%;
+  padding-left: 4%;
+}
+
+mat-sidenav-content {
+  background-color: white;
+}

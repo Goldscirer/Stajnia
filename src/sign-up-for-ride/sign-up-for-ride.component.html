@@ -1,0 +1,105 @@
+<app-theme siteName="Zapisz się na jazdę"></app-theme>
+<div class="body-area">
+  <h2>Warunki zapisania się na jazdę</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tincidunt congue ullamcorper. Morbi eros sem,
+    tincidunt in dictum ut, volutpat sit amet turpis. Integer neque mauris, imperdiet nec tristique nec, fringilla at
+    nulla. Nunc fringilla convallis ante, ac gravida mauris luctus sed. Integer feugiat congue nisi ut sagittis.
+    Curabitur consequat et magna vitae eleifend. In tempor eu lorem vitae lobortis. Ut odio metus, pulvinar non congue
+    ac, convallis quis libero. Sed hendrerit lectus vitae nunc aliquam efficitur. Phasellus felis turpis, molestie in
+    nulla quis, malesuada hendrerit quam. Duis accumsan ipsum quis dui viverra mollis eu ac nisi.
+  </p>
+  <br>
+  <h2 class="left">Wybierz dzień który Ciebie interesuje.</h2>
+
+  <div class="row text-center">
+    <div class="col-md-4">
+      <div class="btn-group">
+        <button
+          mat-raised-button color="primary"
+          mwlCalendarPreviousView
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Previous
+        </button>
+        <button
+          class="button-space"
+          mwlCalendarToday
+          mat-raised-button color="primary"
+          [(viewDate)]="viewDate"
+        >
+          Today
+        </button>
+        <button
+          class="button-space"
+          mwlCalendarNextView
+          mat-raised-button color="primary"
+          [view]="view"
+          [(viewDate)]="viewDate"
+          (viewDateChange)="closeOpenMonthViewDay()"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+    </div>
+  <br />
+  <div [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="CalendarView.Day"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-day-view>
+  </div>
+
+    <br><br>
+    <h2 class="left">Wybierz konia:</h2>
+
+    <mat-form-field style="width: 100%">
+      <mat-label>Koń:</mat-label>
+      <select [(value)]="selected" matNativeControl required >
+        <option value="Jantar">Jantar</option>
+        <option value="J-Irys">J-Irys</option>
+        <option value="Bartek">Bartek</option>
+      </select>
+    </mat-form-field>
+
+    <br><br>
+
+    <div class="save-button-container">
+      <button class="save-button" mat-raised-button color="primary" (click)="openDialog()">Zapisz się</button>
+    </div>
+
+    <br><br>
+
+
+  </div>
+</div>

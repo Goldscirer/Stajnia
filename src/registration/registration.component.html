@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Stajnia</h1>
+  <div class="label__container">
+    <h2>Rejestracja</h2>
+  </div>
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input matInput type="email" placeholder="Login" value="">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="Hasło">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="Powtórz hasło">
+    </mat-form-field>
+  </form>
+  <div class="remember__container">
+    <h3>Zapisz nazwę użytkownika</h3>
+    <mat-slide-toggle color="primary"></mat-slide-toggle>
+  </div>
+  <div class="login-label">
+    <h5><a routerLink="/login" style="color: #2A78E4" href="#">Logowanie</a></h5>
+  </div>
+  <button routerLink="/login" mat-raised-button color="primary">Rejestracja</button>
+</div>

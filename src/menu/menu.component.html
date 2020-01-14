@@ -1,0 +1,20 @@
+<hr>
+<div class="position">
+<button routerLink="/home" mat-button>Strona Główna</button>
+
+<button *ngIf="!stateService.instructor" routerLink="/sign-up-for-ride" mat-button>Zapisz się na jazdę</button>
+
+
+<button *ngIf="!stateService.instructor" routerLink="/done-ride" mat-button>Twoje jazdy</button>
+
+  <button *ngIf="stateService.instructor" routerLink="/ride" mat-button [matMenuTriggerFor]="beforeMenu">Jazdy</button>
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <button routerLink="/ride-plan" mat-menu-item>Rozpisz</button>
+    <button routerLink="/old-ride"mat-menu-item>Odbyte</button>
+  </mat-menu>
+
+
+
+</div>
+<hr>
+

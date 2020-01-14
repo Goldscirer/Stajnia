@@ -1,0 +1,50 @@
+.container {
+  display: block;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.label__container{
+  display: flex;
+  justify-content: left;
+}
+
+.label__container h2 {
+  color: #2A78E4;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.remember__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+mat-slide-toggle {
+  margin-top: 18px;
+}
+
+.login-label {
+  text-decoration: underline;
+  float: right;
+  color: #2A78E4;
+}
+
+button {
+  width: 100%;
+  color: #2A78E4;
+}
