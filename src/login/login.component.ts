@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {StateService} from "../app/state.service";
+import {MatSnackBar} from "@angular/material";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ export class LoginComponent implements OnInit {
   name: string;
 
   constructor(public router: Router,
-              public stateService: StateService) { }
+              public stateService: StateService,
+              private _snackBar: MatSnackBar) { }
 
   ngOnInit() {
   }
@@ -27,6 +29,17 @@ export class LoginComponent implements OnInit {
       this.stateService.setInstructor();
       this.router.navigate(['/home'], {});
     }
+
+    if (name !== 'user' && password !== 'user' && name !== 'admin' && password !== 'admin') {
+      this.openSnackBar("Incorrect data! Please try again. :)", "");
+    }
+  }
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+      panelClass: ['snackbar']
+    });
   }
 
 }

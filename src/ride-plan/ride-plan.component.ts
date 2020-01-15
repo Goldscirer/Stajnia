@@ -53,13 +53,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {person: 'Piot Pietak', horse: 'Jantar', choosenHorse: "s", status: 'Niezatwierdzony'},
 ];
 
-const DONE_ELEMENT_DATA: PeriodicElement[] = [
-  {day: '15.09.2019', members: '7', hour: "16.00", status: 'teren'},
-  {day: "22.08.2019", members: '5', hour: "17.00", status: 'maneż'},
-  {day: "22.05.2020", members: '8', hour: "16.00", status: 'teren'},
-  {day: "12.03.2020", members: '1', hour: "19.00", status: 'teren'},
-];
-
 @Component({
   selector: 'app-ride-plan',
   templateUrl: './ride-plan.component.html',
@@ -127,7 +120,6 @@ export class RidePlanComponent implements OnInit {
 
   displayedColumns: string[] = ['person', 'horse', 'choosenHorse', 'status'];
   dataSource = ELEMENT_DATA;
-  doneDataSource = DONE_ELEMENT_DATA;
 
   constructor(public dialog: MatDialog, private modal: NgbModal) { }
 

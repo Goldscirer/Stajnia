@@ -1,3 +1,15 @@
 h1 {
   text-align: center;
 }
+
+.logout-icon {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+}
+
+.label {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+}

@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {StateService} from "../app/state.service";
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() siteName: string;
 
-  constructor() { }
+  constructor(public stateService: StateService) { }
 
   ngOnInit() {
+  }
+
+  clearState() {
+    this.stateService.instructor = false;
   }
 
 }

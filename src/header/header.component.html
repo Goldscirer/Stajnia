@@ -1,1 +1,9 @@
 <h1>{{siteName}}</h1>
+<div class="label" *ngIf="stateService.instructor">
+  Instruktor
+</div>
+<div class="logout-icon">
+  <mat-icon routerLink="/login" (click)="clearState()" aria-hidden="false" aria-label="Example home icon">logout
+  </mat-icon>
+</div>
+

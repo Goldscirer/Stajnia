@@ -4,4 +4,11 @@ mat-cell {
 
 .position {
   margin-left: 15%;
+  margin-right: 15%;
+  width: 71.9%;
 }
+
+.background {
+  background-color: #4CAF50;
+}
+

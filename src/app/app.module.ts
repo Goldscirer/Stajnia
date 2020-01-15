@@ -8,9 +8,9 @@ import {
   MatButtonModule, MatCheckboxModule,
   MatDialogModule,
   MatDialogRef,
-  MatFormFieldModule,
+  MatFormFieldModule, MatIcon, MatIconModule,
   MatInputModule,
-  MatMenuModule, MatOption, MatOptionModule, MatSelectModule
+  MatMenuModule, MatOption, MatOptionModule, MatSelectModule, MatSnackBar, MatSnackBarModule
 } from '@angular/material';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { RideComponent } from '../ride/ride.component';
@@ -71,7 +71,9 @@ import { OldRideComponent } from '../old-ride/old-ride.component';
     MatMenuModule,
     AppRoutingModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatIconModule,
+    MatSnackBarModule
   ],
   exports: [
     MatButtonModule,
